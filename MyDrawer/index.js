@@ -2,10 +2,11 @@
 // In App.js in a new project
 
 import * as React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
+import s from './Styles';
 
 function HomeScreen(props) {
   return (
@@ -38,12 +39,25 @@ function App() {
     </NavigationContainer>
   );
 }*/
+function Menu(props){
+    return( 
+        <View style={s.container}> 
+           <View style={bg.container}>
+              <TouchableOpacity>
+                  <View style={s.userContainer}>
+                      <Image style={s.userImagen} source ={require('./logo-brainapps.png')}/>
+                  </View>
+              </TouchableOpacity>
+          </View>
+        </View>
+    );
+ }
 
 const Drawer = createDrawerNavigator();
 
 function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer drawerContent={(props)=> <Menu {...props}/> }>
       <Drawer.Navigator initialRouteName="Home">
         <Drawer.Screen name="Home" component={HomeScreen} />
         <Drawer.Screen name="Profile" component={ProfileScreen} />
