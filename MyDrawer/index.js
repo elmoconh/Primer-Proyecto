@@ -42,10 +42,11 @@ function App() {
 function Menu(props){
     return( 
         <View style={s.container}> 
-           <View style={bg.container}>
+           <View style={s.bgContainer}>
               <TouchableOpacity>
                   <View style={s.userContainer}>
-                      <Image style={s.userImagen} source ={require('./logo-brainapps.png')}/>
+                         <Text> pasé por aquí </Text>
+                      <Image source={require('./imagen1.jpg')}  style={{ width: 200, height: 200 }}/>
                   </View>
               </TouchableOpacity>
           </View>
@@ -57,8 +58,8 @@ const Drawer = createDrawerNavigator();
 
 function App() {
   return (
-    <NavigationContainer drawerContent={(props)=> <Menu {...props}/> }>
-      <Drawer.Navigator initialRouteName="Home">
+    <NavigationContainer>
+      <Drawer.Navigator drawerContent={(props)=> <Menu {...props}/>}>
         <Drawer.Screen name="Home" component={HomeScreen} />
         <Drawer.Screen name="Profile" component={ProfileScreen} />
       </Drawer.Navigator>
