@@ -5,13 +5,13 @@ import * as React from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createDrawerNavigator, DrawerItemList  } from '@react-navigation/drawer';
 import s from './Styles';
 
 function HomeScreen(props) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text style={{fontSize: 20}}>Home Screen</Text>
+      <Text style={{fontSize: 20}}>Inicio</Text>
       <TouchableOpacity style={{width: 200, height: 50, backgroundColor: '#ff5204', padding: 10, alignItems: 'center', borderRadius: 5}} onPress={()=>props.navigation.navigate('Profile')}>
        <Text style={{ fontSize: 20, color: '#fff'}}> Perfil </Text>
       </TouchableOpacity>
@@ -45,11 +45,16 @@ function Menu(props){
            <View style={s.bgContainer}>
               <TouchableOpacity>
                   <View style={s.userContainer}>
-                         <Text> pasé por aquí </Text>
                       <Image source={require('./imagen1.jpg')}  style={{ width: 200, height: 200 }}/>
                   </View>
+                <View style={s.userNombre}>
+                  <Text style={s.userTitulo}>Helmer Morales </Text>
+                  <Text style = {s.userSubTitulo}>Ing en Informática</Text>
+                </View>
+
               </TouchableOpacity>
           </View>
+            <DrawerItemList {...props}/>
         </View>
     );
  }
@@ -60,8 +65,8 @@ function App() {
   return (
     <NavigationContainer>
       <Drawer.Navigator drawerContent={(props)=> <Menu {...props}/>}>
-        <Drawer.Screen name="Home" component={HomeScreen} />
-        <Drawer.Screen name="Profile" component={ProfileScreen} />
+        <Drawer.Screen name="Inicio" component={HomeScreen} />
+        <Drawer.Screen name="Perfil" component={ProfileScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
