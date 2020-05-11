@@ -1,18 +1,25 @@
 /* eslint-disable prettier/prettier */
 // In App.js in a new project
-
+//Importando componentes
 import * as React from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator, DrawerItemList  } from '@react-navigation/drawer';
-import s from './Styles';
+import Icon from "react-native-vector-icons/FontAwesome"
 
-function HomeScreen(props) {
+//importando otros archivos javascript
+import s from './Styles';
+import {navigationRef} from '../Screens/RootNavigation';
+import HomeScreen from '../Screens/HomeScreen';
+import ProfileScreen from '../Screens/ProfileScreen';
+
+
+/*function HomeScreen(props) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text style={{fontSize: 20}}>Inicio</Text>
-      <TouchableOpacity style={{width: 200, height: 50, backgroundColor: '#ff5204', padding: 10, alignItems: 'center', borderRadius: 5}} onPress={()=>props.navigation.navigate('Profile')}>
+      <TouchableOpacity style={{width: 200, height: 50, backgroundColor: '#ff5204', padding: 10, alignItems: 'center', borderRadius: 5}} onPress={()=>props.navigation.navigate('Perfil')}>
        <Text style={{ fontSize: 20, color: '#fff'}}> Perfil </Text>
       </TouchableOpacity>
     </View>
@@ -39,6 +46,23 @@ function App() {
     </NavigationContainer>
   );
 }*/
+
+
+function DrawerMenu(props){
+    return(
+        <TouchableOpacity onPress={props.navigation}>
+            <View style={s.menuContainer}>
+                <View style={s.iconoContainer}>
+                    <Icon size={17} name={props.iconName}/>
+                </View>
+                <View style={s.tituloContainer}>
+                    <Text style={s.tituloTxt}>{props.titleName}</Text>
+                </View>
+            </View>
+        </TouchableOpacity>
+    );
+}
+
 function Menu(props){
     return( 
         <View style={s.container}> 
@@ -54,7 +78,9 @@ function Menu(props){
 
               </TouchableOpacity>
           </View>
-            <DrawerItemList {...props}/>
+                  <DrawerMenu iconName= 'home' titleName ='Inicio' navigation={ ()=>props.navigation.navigate('Inicio')}/>
+                  <DrawerMenu iconName= 'user' titleName ='Inicio' navigation={ ()=>props.navigation.navigate('Perfil')}/>
+
         </View>
     );
  }
@@ -63,7 +89,7 @@ const Drawer = createDrawerNavigator();
 
 function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer ref = {navigationRef}>
       <Drawer.Navigator drawerContent={(props)=> <Menu {...props}/>}>
         <Drawer.Screen name="Inicio" component={HomeScreen} />
         <Drawer.Screen name="Perfil" component={ProfileScreen} />
