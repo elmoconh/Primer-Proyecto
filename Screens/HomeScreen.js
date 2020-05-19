@@ -7,7 +7,7 @@ export default function HomeScreen() {
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text style={{fontSize: 20}}>Inicio</Text>
       <Button nombre ='Ir a perfil' destino = 'Perfil'/>
-      <Button nombre ='Ir a Gps' destino = 'Gps'/>
+      <Button nombre ='Ir a Gps' destino = 'GPS'/>
 
     </View>
   );

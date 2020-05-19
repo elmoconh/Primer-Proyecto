@@ -10,10 +10,10 @@ import Icon from "react-native-vector-icons/FontAwesome"
 
 //importando otros archivos javascript
 import s from './Styles';
-import {navigationRef} from '../Screens/RootNavigation';
-import HomeScreen from '../Screens/HomeScreen';
-import ProfileScreen from '../Screens/ProfileScreen';
-
+import {navigationRef}  from '../Screens/RootNavigation';
+import HomeScreen       from '../Screens/HomeScreen';
+import ProfileScreen    from '../Screens/ProfileScreen';
+import GpsScreen        from '../Screens/GpsScreen';
 
 /*function HomeScreen(props) {
   return (
@@ -80,6 +80,7 @@ function Menu(props){
           </View>
                   <DrawerMenu iconName= 'home' titleName ='Inicio' navigation={ ()=>props.navigation.navigate('Inicio')}/>
                   <DrawerMenu iconName= 'user' titleName ='Inicio' navigation={ ()=>props.navigation.navigate('Perfil')}/>
+                  <DrawerMenu iconName= 'map' titleName ='GPS' navigation={ ()=>props.navigation.navigate('GPS')}/>
 
         </View>
     );
@@ -93,6 +94,7 @@ function App() {
       <Drawer.Navigator drawerContent={(props)=> <Menu {...props}/>}>
         <Drawer.Screen name="Inicio" component={HomeScreen} />
         <Drawer.Screen name="Perfil" component={ProfileScreen} />
+        <Drawer.Screen name="GPS" component={GpsScreen} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
