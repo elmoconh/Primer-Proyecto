@@ -3,7 +3,7 @@
 //Importando componentes
 import * as React from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, DarkTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator, DrawerItemList  } from '@react-navigation/drawer';
 import Icon from "react-native-vector-icons/FontAwesome"
@@ -89,7 +89,7 @@ const Drawer = createDrawerNavigator();
 
 function App() {
   return (
-    <NavigationContainer ref = {navigationRef}>
+    <NavigationContainer ref = {navigationRef} theme={DarkTheme}>
       <Drawer.Navigator drawerContent={(props)=> <Menu {...props}/>}>
         <Drawer.Screen name="Inicio" component={HomeScreen} />
         <Drawer.Screen name="Perfil" component={ProfileScreen} />
