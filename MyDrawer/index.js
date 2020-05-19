@@ -89,7 +89,7 @@ const Drawer = createDrawerNavigator();
 
 function App() {
   return (
-    <NavigationContainer ref = {navigationRef} theme={DarkTheme}>
+    <NavigationContainer ref = {navigationRef}>
       <Drawer.Navigator drawerContent={(props)=> <Menu {...props}/>}>
         <Drawer.Screen name="Inicio" component={HomeScreen} />
         <Drawer.Screen name="Perfil" component={ProfileScreen} />
