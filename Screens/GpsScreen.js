@@ -1,9 +1,13 @@
+/* eslint-disable react/self-closing-comp */
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import { StyleSheet, Text, View , TextInput} from 'react-native';
+import { StyleSheet,  View , TouchableOpacity} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
-import Button from './Button';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
+import Button from './Button';
+import CameraScreen from './CameraScreen';
 
 function gpsScreen(){
     var mapStyle=[{"elementType": "geometry", 
@@ -31,8 +35,8 @@ function gpsScreen(){
         <MapView
           style={styles.map}
           initialRegion={{
-            latitude: 37.78825,
-            longitude: -122.4324,
+            latitude: -32.7498949,
+            longitude: -70.735578,
             latitudeDelta: 0.0922,
             longitudeDelta: 0.0421,
           }}
@@ -40,22 +44,21 @@ function gpsScreen(){
 
         >
           <Marker
-            draggable
             coordinate={{
-              latitude: 37.78825,
-              longitude: -122.4324,
+              latitude: -32.7498949,
+            longitude: -70.735578,
             }}
-            onDragEnd={(e) => alert(JSON.stringify(e.nativeEvent.coordinate))}
             title={'Test Marker'}
             description={'This is a description of the marker'}
-          />
+          >
+    
+          </Marker>
         </MapView>
-              <Button nombre ='Ir a inicio' destino = 'Inicio'/>
+              <Button nombre ='Abrir Camara' destino = 'Camara'/>
 
       </View>
     );
   }
-
 
 
 const styles = StyleSheet.create({
