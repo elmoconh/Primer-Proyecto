@@ -1,8 +1,8 @@
 /* eslint-disable prettier/prettier */
 // In App.js in a new project
-//Importando componentes
+//Importando Librerías
 import * as React from 'react';
-import { View, Text, TouchableOpacity, Image } from 'react-native';
+import { View, Text, TouchableOpacity, Image, Platform } from 'react-native';
 import { NavigationContainer, DarkTheme } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator, DrawerItemList  } from '@react-navigation/drawer';
@@ -15,38 +15,6 @@ import HomeScreen       from '../Screens/HomeScreen';
 import ProfileScreen    from '../Screens/ProfileScreen';
 import GpsScreen        from '../Screens/GpsScreen';
 import CameraScreen     from'../Screens/CameraScreen';
-
-/*function HomeScreen(props) {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text style={{fontSize: 20}}>Inicio</Text>
-      <TouchableOpacity style={{width: 200, height: 50, backgroundColor: '#ff5204', padding: 10, alignItems: 'center', borderRadius: 5}} onPress={()=>props.navigation.navigate('Perfil')}>
-       <Text style={{ fontSize: 20, color: '#fff'}}> Perfil </Text>
-      </TouchableOpacity>
-    </View>
-  );
-}
-
-function ProfileScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Pantalla Perfil</Text>
-    </View>
-  );
-}
-
-/*const Stack = createStackNavigator();
-
-function App() {
-  return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
-        <Stack.Screen name="Profile" component={ProfileScreen} />        
-      </Stack.Navigator>
-    </NavigationContainer>
-  );
-}*/
 
 
 function DrawerMenu(props){

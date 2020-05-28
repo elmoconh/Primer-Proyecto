@@ -15,9 +15,9 @@ import * as RootNavigation from './RootNavigation'
 
 export default function Button({destino, nombre}) {
     return(
-    <TouchableOpacity style={{width: 200, height: 50, backgroundColor: '#ff5204', padding: 10, alignItems: 'center', borderRadius: 5}} 
+    <TouchableOpacity style={{width: 90, height: 20, backgroundColor: '#ff5204', padding: 2, alignItems: 'center', borderRadius: 10, margin: 5}} 
     onPress={()=>RootNavigation.navigate(destino)}>
-       <Text style={{ fontSize: 20, color: '#fff'}}> {nombre} </Text>
+       <Text style={{ fontSize: 10, color: '#fff'}}> {nombre} </Text>
       </TouchableOpacity>
     );
 }
