@@ -33,8 +33,8 @@ export default function HomeScreen() {
 
         }}
       />  
-      <Button nombre ='Ir a perfil' destino = 'Perfil'/>
       <Button nombre ='Ir a Gps' destino = 'GPS'/>
+      <Button nombre ='Abrir Camara' destino = 'Camara'/>
 
     </View>
   );

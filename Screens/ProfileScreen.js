@@ -11,6 +11,7 @@ export default function ProfileScreen() {
       <Text style={{fontSize:20, fontWeight: 'bold'}}>Nombre: Helmer Morales Aranda</Text>
       <Text style={{fontSize:20,fontWeight: 'bold'}}>Tipo de usuario: Jugador o visitante</Text>
           <Button nombre ='Ir a inicio' destino = 'Inicio'/>
+          <Button nombre ='Abrir Camara' destino = 'Camara'/>
     </View>
   );
 }
